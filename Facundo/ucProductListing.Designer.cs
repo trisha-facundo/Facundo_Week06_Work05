@@ -76,6 +76,7 @@
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -134,6 +135,7 @@
             this.lbInformation.Name = "lbInformation";
             this.lbInformation.Size = new System.Drawing.Size(478, 212);
             this.lbInformation.TabIndex = 1;
+            this.lbInformation.SelectedIndexChanged += new System.EventHandler(this.lbInformation_SelectedIndexChanged);
             // 
             // lblPrompt
             // 

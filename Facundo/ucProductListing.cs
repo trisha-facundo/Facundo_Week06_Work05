@@ -54,5 +54,32 @@ namespace Facundo
                 txtDescription.Focus();
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int index = lbInformation.SelectedIndex;
+
+            if (index != -1)
+            {
+                DialogResult deleteMessage = MessageBox.Show("Are you sure you want to delete?", "Delete Confirmation",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                MessageBox.Show(shopingList[index] + "deleted.");
+
+                shopingList.RemoveAt(index);
+                updateGUI();
+
+            }
+            else {
+                lblPrompt.Text = "Please select an item to delete.";
+                lblPrompt.Visible = true;
+            }
+        }
+
+        private void lbInformation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblPrompt.Text = "";
+            lblPrompt.Visible = false;
+        }
     }
 }
